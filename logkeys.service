@@ -1,0 +1,10 @@
+[Unit]
+Description=logkeys daemon service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/logkeys --no-daemon -s --no-func-keys -m /keymap/my_keymap
+ExecStop=pkill logkeys
+
+[Install]
+WantedBy=default.target
